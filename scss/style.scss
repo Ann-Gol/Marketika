@@ -1,0 +1,102 @@
+/***   Mixins   ***/
+@import '_global';
+
+.section__inner{
+width: 1100px;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+}
+
+/*** header ***/
+
+.section-header{
+    background-image: url(../img/header-bg.jpg);
+background-repeat: no-repeat no-repeat;
+background-position: center;
+background-size: cover;
+    color: #fff;
+    position: relative;
+
+.section__inner{
+    height: 100vh;
+    position: relative;
+    z-index: 10;
+}
+
+&::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(20, 39, 41, .47);
+    z-index: 5;
+}
+    &-logo{
+        flex-shrink: 1;
+        padding-top: 35px;
+    }
+    &-content{
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+    
+   &-wrapper{
+       margin: 0 auto;    
+       &__title,              
+       &__subtitle{
+      text-align: center;            
+   }   
+   &__title{     
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 60px;
+    margin-bottom: 16px;
+   }  
+   
+   &__subtitle{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    margin: 0 auto 44px;
+    width: 65%;
+   }
+       &__form{
+           display: flex;
+       }
+
+           &__input{
+            flex: 1;
+            padding-right: 40px;
+            input{                
+                border: none;
+                background-color: rgba(255, 255, 255, .25);
+                color: #fff;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 16px;
+                margin: 0;
+                padding: 16px 20px; 
+                border-radius: 4px;
+                width: 100%;
+                &::placeholder{
+                    color: #fff;
+                }                              
+            }
+           }
+
+           &__button{
+              button{
+                font-family: 'Montserrat', sans-serif;
+                font-size: 18px;
+                background: linear-gradient(to right, #fe985b 0%, #fe4fa7 100%);
+                padding: 15px 50px;
+                border-radius: 4px;
+                color: #fff;
+              }
+           }          
+       }
+    }      
+  }  
