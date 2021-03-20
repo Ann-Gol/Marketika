@@ -1,11 +1,16 @@
 @import '_global';
 // *** common *** //
 .section__inner{
-max-width: 1100px;
+max-width: 1180px;
 margin: 0 auto;
-display: flex;
-flex-direction: column;
+padding: 0 20px;
 }
+
+/* .section-outor{
+    padding: 0 20px !important;
+   padding-left: 20px;
+   padding-right: 20px;
+} */
 
 .text-similar{
 color: #6c6c6c;            
@@ -34,6 +39,19 @@ line-height: 28px;
 }
 
 // *** common *** //
+
+
+// *** virables *** //
+/* $screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+$screen-sm-max: 767px;
+$screen-md-max: 991px;
+$screen-lg-max: 1199px; */
+// *** virables *** //
+
 
 /*** header ***/
 
@@ -112,8 +130,37 @@ background-size: cover;
                     color: #fff;
                 }                              
             }
-           }            
+         
+          }            
        }
+       @media (max-width: 568px){
+           &-wrapper__title{
+               font-size: 40px;                            
+           }
+           &-wrapper__subtitle{
+               width: 100%;
+           }
+           &{
+            padding-bottom: 30px;
+        }  
+       }
+    }
+    @media (max-width: 767px){
+        &-content-wrapper__form{
+          flex-direction: column;  
+        }
+        .btn-color{
+            width: 100%;
+        }  
+    }
+    &-content-wrapper__input{
+        margin-bottom: 10px;               
+    }
+    &{
+        padding-bottom: 80px;
+    }
+    &-content-wrapper__input{
+        padding-right: 0;
     }      
   } 
   
@@ -123,6 +170,10 @@ background-size: cover;
 
 .section-promo{
     padding: 120px 0;
+    @media (max-width: 767px){
+        padding: 20px 0;
+    }
+   
 }
 
 .section-promo-1{
@@ -154,7 +205,34 @@ background-size: cover;
     &__video{
         flex-basis: 50%;
     }
-}
+
+    @media (max-width: 767px) {
+        flex-direction: column;
+        &__video{
+            order: -1;
+            margin-bottom: 20px;
+            width: 78%;
+            margin: 0 auto;
+      }
+      &__content{
+          padding-right: 0;          
+          padding-bottom: 20px;
+        }
+     }
+     @media (max-width: 568px){
+         .title{
+             font-size: 19px;
+             text-align: center;
+             margin: 20px 0 20px;
+             line-height: 22px;
+             font-weight: 900;
+         }
+         .subtitle{
+             text-align: center;
+         }
+     }       
+  }
+
 
 .section-promo-2{
     display: flex;    
@@ -172,9 +250,23 @@ background-size: cover;
             margin-bottom: 14px;
         }
         & + &{
-            margin-left: 40px;
+            margin-left: 40px;           
         }        
     }
+    @media (max-width: 568px){
+        & {
+            flex-direction: column;
+            padding-top: 20px;
+            margin-top: 0;           
+        }
+        &-item + &-item{
+            margin-left: 0;
+        }
+        &-item{
+            margin-bottom: 20px;
+        }
+    }
+
 }
 
 /*** end promo ***/
@@ -208,6 +300,11 @@ background-size: cover;
     }
     &-text{
         line-height: 40px;
+    }
+    @media (max-width: 767px){
+        &{
+            display: none;
+        }
     }
 }
 /*** section-founder end***/
@@ -256,7 +353,18 @@ background-size: cover;
             &.active{
                 background-color: #f6fafd;
             }                   
-        }
+        }        
+    }
+    @media (max-width: 568px){
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    &-subtitle{
+        width: 100%;
+        margin: 0 auto 20px;
+    }
+    &-list{
+        flex-direction: column;
     }
 
 }
@@ -289,6 +397,17 @@ background-size: cover;
         border: none;
         color: #464646;
     }
+    @media (max-width: 767px){
+        &-title{
+            font-size: 38px;
+        }
+        &-decription{
+            width: 100%;
+        }
+        &{
+            padding: 20px 0;
+        }
+    }
 
 }
 /*** section-free end  ***/
@@ -299,9 +418,10 @@ background-size: cover;
     color: #464646; 
         &-logo{                      
             font-size: 24px;
-            font-weight: 700;
-            text-align: center;
+            font-weight: 700;            
             margin-bottom: 30px;
+            display: flex;
+            justify-content: center;            
         }       
          &-list{
              display: flex;
@@ -319,8 +439,13 @@ background-size: cover;
             transition: all .5s;
         }
          .list-item + .list-item{
-            margin-left: 60px;
+            margin-left: 5%;
             
+         }
+         @media (max-width: 767px){
+             &{
+                padding: 20px 20px;
+             }
          }           
          
 }
